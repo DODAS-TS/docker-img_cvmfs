@@ -1,7 +1,9 @@
 #!/bin/bash
 
 if [[ -z $REPO_LIST ]]; then
+
     echo "Env variable REPO_LIST must be specified in the form REPO_LIST=\"cms.cern.ch oasis.cern.ch\""
+
 else
 
     for repo in $REPO_LIST; do
@@ -13,8 +15,5 @@ else
     done
     sleep infinity
 
-else 
-
-    echo "Env variable REPO_LIST must be specified in the form REPO_LIST=\"cms.cern.ch oasis.cern.ch\""
 
 fi
