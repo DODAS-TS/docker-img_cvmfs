@@ -1,8 +1,10 @@
 #!/bin/bash
 
-if [-z $REPO_LIST]; then
+if [[ -z $REPO_LIST ]]; then
+    echo "Env variable REPO_LIST must be specified in the form REPO_LIST=\"cms.cern.ch oasis.cern.ch\""
+else
 
-    for repo in ($REPO_LIST); do
+    for repo in $REPO_LIST; do
         if ! [ -d /cvmfs/$repo ]; then
             mkdir /cvmfs/$repo
         fi
@@ -13,6 +15,6 @@ if [-z $REPO_LIST]; then
 
 else 
 
-   echo "Env variable REPO_LIST must be specified in the form REPO_LIST=\"cms.cern.ch oasis.cern.ch\""
+    echo "Env variable REPO_LIST must be specified in the form REPO_LIST=\"cms.cern.ch oasis.cern.ch\""
 
 fi

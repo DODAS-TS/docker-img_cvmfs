@@ -8,6 +8,7 @@ RUN apt-get update
 RUN apt-get install -y cvmfs cvmfs-server
 
 #RUN cvmfs_server mkfs test
+RUN echo "user_allow_other" >> /etc/fuse.conf
 
 COPY scripts/entrypoint.sh /root/entrypoint.sh
 
