@@ -5,7 +5,7 @@ RUN wget  https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_al
 RUN dpkg -i cvmfs-release-latest_all.deb 
 RUN rm -f cvmfs-release-latest_all.deb
 RUN apt-get update
-RUN apt-get install -y cvmfs cvmfs-server
+RUN apt-get install -y cvmfs cvmfs-server cvmfs-config-default
 
 #RUN cvmfs_server mkfs test
 RUN echo "user_allow_other" >> /etc/fuse.conf
