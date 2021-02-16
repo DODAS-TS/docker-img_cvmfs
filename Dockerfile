@@ -12,7 +12,8 @@ RUN apt-get install -y cvmfs cvmfs-server cvmfs-config-default
 RUN apt-get autoremove -y && apt-get clean
 
 #RUN cvmfs_server mkfs test
-RUN echo "user_allow_other" >> /etc/fuse.conf
+RUN echo "user_allow_other" >> /etc/fuse.conf \
+    && echo -e "\nCVMFS_HTTP_PROXY=DIRECT\n" >> /etc/cvmfs/default.conf
 
 COPY scripts/entrypoint.sh /root/entrypoint.sh
 
