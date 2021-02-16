@@ -1,6 +1,6 @@
 FROM ubuntu
 
-env DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt install -y wget lsb-release
 RUN wget  https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
