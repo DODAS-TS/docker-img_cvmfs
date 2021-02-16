@@ -2,7 +2,8 @@ FROM ubuntu
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt install -y wget lsb-release fuse
+RUN apt-get update && apt-get upgrade -y
+RUN apt install -y wget lsb-release fuse
 RUN wget  https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
 RUN dpkg -i cvmfs-release-latest_all.deb 
 RUN rm -f cvmfs-release-latest_all.deb
